@@ -1,4 +1,4 @@
-# CMSC 100 Group 2 Project
+# CMSC 100 B1L Group 2 Project
 
 ## Reminders:
 1. Before doing anything, pull from the repository.
