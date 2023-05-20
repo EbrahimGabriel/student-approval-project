@@ -4,8 +4,8 @@
 1. Before doing anything, pull from the repository.
 2. Create a separate branch (git checkout -b <branchname>) and work from there.
 3. Name your branches closely to the feature you are working on (e.g. student-signup, student-approval, etc.)
-4. When commiting, follow the lab conventions (or kung pumayag si ma'am na kahit ano then: <branchname>: 'commit message') 
-5. When pushing, do not push to the main branch! Push to the branch you are working on. (git push origin <branchname>) 
+4. When commiting, follow the lab conventions (or kung pumayag si ma'am na kahit ano then: branchname: 'commit message') 
+5. When pushing, do not push to the main branch! Push to the branch you are working on. (git push origin branchname) 
 6. Afterwards, create a pull request to be reviewed and merged with main.
 
 ## How to make a pull request
@@ -16,8 +16,8 @@
 5. After that, create the pull request. 
 
 ## Authors:
-    - Shane Austin Asuncion
-    - Jan Eriol Cunanan
-    - Ebrahim Gabriel
-    - Luis Dominic Laserna
-    - Patricia Mae Vargas
+- Shane Austin Asuncion
+- Jan Eriol Cunanan
+- Ebrahim Gabriel
+- Luis Dominic Laserna
+- Patricia Mae Vargas
