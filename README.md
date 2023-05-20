@@ -2,7 +2,7 @@
 
 ## Reminders:
 1. Before doing anything, pull from the repository.
-2. Create a separate branch (git checkout -b <branchname>) and work from there.
+2. Create a separate branch (git checkout -b branchname) and work from there.
 3. Name your branches closely to the feature you are working on (e.g. student-signup, student-approval, etc.)
 4. When commiting, follow the lab conventions (or kung pumayag si ma'am na kahit ano then: branchname: 'commit message') 
 5. When pushing, do not push to the main branch! Push to the branch you are working on. (git push origin branchname) 
