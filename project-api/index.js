@@ -1,4 +1,3 @@
-
 import express from 'express';
 
 // Initialize server
@@ -11,7 +10,6 @@ app.use(express.urlencoded({ extended: false }));
 // Import router
 import router from './router.js';
 router(app);
-
 
 // Server listens at Port 3001
 app.listen(3001, () => { console.log("API listening at port 3001.")});

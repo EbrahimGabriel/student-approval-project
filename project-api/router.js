@@ -1,4 +1,5 @@
-import { getSubjects, greetByPOST, getSubjectByCode, addSubject, deleteSubject } from './subject-controller.js';
+import { getUsers, addUser, deleteUser } from './user-controller.js';
+import { getApplications, addApplication, deleteApplication } from './application-controller.js';
 
 export default function router(app) {
 
@@ -11,9 +12,10 @@ export default function router(app) {
     next();
   })
   
-	app.get("/get-subjects", getSubjects);
-  app.post("/greet-by-post", greetByPOST);
-  app.get("/get-subject-by-code", getSubjectByCode);
-  app.post("/add-subject", addSubject);
-  app.post("/delete-subject", deleteSubject);
+	app.get("/get-users", getUsers);
+  app.post("/add-user", addUser);
+  app.post("/delete-user", deleteUser);
+  app.get("/get-applications", getApplications);
+  app.post("/add-application", addApplication);
+  app.post("/delete-application", deleteApplication);
 }
