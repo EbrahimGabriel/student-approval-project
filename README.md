@@ -15,6 +15,10 @@
 4. Add title and description of the things you did.
 5. After that, create the pull request. 
 
+## MongoDB Database
+Make a new database named project in your MongoDB compass. Users and Applications will be stored here. 
+Check the README in the project-api folder for the routes.
+
 ## Authors:
 - Shane Austin Asuncion
 - Jan Eriol Cunanan
