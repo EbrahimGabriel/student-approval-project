@@ -1,5 +1,5 @@
-import StudentRoot from "./student_pages/student_root";
-import ApproverRoot from "./approver_pages/approver_root";
+import StudentRoot from "../student_pages/student_root";
+import ApproverRoot from "../approver_pages/approver_root";
 
 let user = "student"; //SAMPLE ONLY, U GET THIS INFO FROM SIGN IN SCREEN
 

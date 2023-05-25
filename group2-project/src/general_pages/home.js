@@ -1,5 +1,5 @@
-import Student from "./student_pages/student_home";
-import Approver from "./approver_pages/approver_home";
+import Student from "../student_pages/student_home";
+import Approver from "../approver_pages/approver_home";
 let user = "student"; //SAMPLE ONLY, U GET THIS INFO FROM SIGN IN SCREEN
 
 export default function Home() {

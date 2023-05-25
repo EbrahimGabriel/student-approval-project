@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import { createBrowserRouter, Router, RouterProvider } from 'react-router-dom'
-import SignIn from './signin';
-import SignUp from './signup';
-import Root from './root';
-import Home from './home';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import SignIn from './general_pages/signin';
+import SignUp from './general_pages/signup';
+import Root from './general_pages/root';
+import Home from './general_pages/home';
 import AdminRoot from './admin_pages/admin_root';
 import Admin from './admin_pages/admin_home';
 
