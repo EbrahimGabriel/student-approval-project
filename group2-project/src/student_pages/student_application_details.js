@@ -1,0 +1,82 @@
+import {useState} from 'react';
+
+// Not yet Linked (No button can be used to link to this page)
+export default function StudentApplicationDetails() {
+    // for opening the option to print PDF
+    const [cleared, setCleared] = useState(false)
+
+    const prevReload = event => {
+        event.preventDefault();
+
+        // document.getElementById("acadAdviser").value="";
+        document.getElementById("gitHubLink").value="";
+    }
+
+    // Get the Values from the Fields and Check if empty
+    function FieldGetterChecker() {
+        // Status set to Open and Step set to 1 since we're just opening a new Application for clearance
+        var Status = "Open" 
+        var Step = 1
+        
+        // get the Current Date
+        const currentDate = new Date();
+
+        // var acadAdviser = document.getElementById("acadAdviser").value;
+        var gitHubLink = document.getElementById("gitHubLink").value;
+
+        // if (acadAdviser === "" ) {
+        //     alert ("Please Enter Your Academic Adviser");
+        // }
+        if (gitHubLink === "") {
+            alert ("Please Enter Your Github Link");
+        }
+
+        var remarks = {remark: "Library Clearance not presented", date: currentDate, stepgiven: 1}
+        var studentsubmission = {link: gitHubLink, date: currentDate, step: Step};
+        // call the addApplication to add the data to database
+        addApplication(Status, Step, gitHubLink, remarks, studentsubmission);
+    }
+
+    // For pushing data to the database
+    function addApplication(Status, Step, remarks, Studentsubmission) {
+        fetch("http://localhost:3001/add-application", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            // not yet complete (remakrs not yet implemented)
+            body: JSON.stringify({status: Status, step: Step, remarks: remarks, studentsubmission: Studentsubmission})
+        })
+            .then(console.log);
+                alert("Successfully Requested");
+    }
+
+    return (
+        <>
+        <header id ="headerdiv">
+            <div id="logo">
+                <img src="https://static.cdnlogo.com/logos/m/39/minexcoin.svg" alt="logo"/>
+                <h1>Lorem Ipsum</h1>
+            </div>
+            <button id ="logoutbutton"> Log Out</button>
+        </header>
+        <div id='MainContainer'>
+            <div id="ApplicationDetails">
+                <form id="AppDetailsForm">
+                    <h2> Application Details </h2>
+                    <p> Request for a clearance </p>
+                    {cleared && <button> Print PDF </button>}
+                    {/* <label for="acadAdviser"> Academic Adviser </label> */}
+                    {/* <input type='text' id="acadAdviser" required/> */}
+                    <br/>
+                    <label for="gitHubLink"> GitHub Link </label>
+                    <input type='text' id="gitHubLink" required/>
+                    <br/>
+                    <button onClick={() => FieldGetterChecker()}> Request </button>
+                </form>
+            </div>
+
+        </div>
+        </>
+    );
+}
