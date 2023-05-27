@@ -1,6 +1,5 @@
 import {useState} from 'react';
 
-// Not yet Linked (No button can be used to link to this page)
 export default function StudentApplicationDetails() {
     // for opening the option to print PDF
     const [cleared, setCleared] = useState(false)
@@ -11,6 +10,12 @@ export default function StudentApplicationDetails() {
         // document.getElementById("acadAdviser").value="";
         document.getElementById("gitHubLink").value="";
     }
+
+    //This function is created to stop reloading when submitting!
+    //THIS PART IS COPIED FROM THE INTERNET TO STOP THE RELOADING (https://bobbyhadz.com/blog/react-prevent-page-refresh-on-form-submit#:~:text=Use%20the%20preventDefault()%20method,is%20to%20refresh%20the%20page.)
+    const stopReloadSubmit = event => {
+        event.preventDefault(); // prevent page refresh
+      };
 
     // Get the Values from the Fields and Check if empty
     function FieldGetterChecker() {
@@ -29,12 +34,14 @@ export default function StudentApplicationDetails() {
         // }
         if (gitHubLink === "") {
             alert ("Please Enter Your Github Link");
-        }
-
+        }else{
         var remarks = {remark: "Library Clearance not presented", date: currentDate, stepgiven: 1}
         var studentsubmission = {link: gitHubLink, date: currentDate, step: Step};
         // call the addApplication to add the data to database
         addApplication(Status, Step, gitHubLink, remarks, studentsubmission);
+        }
+
+
     }
 
     // For pushing data to the database
@@ -60,10 +67,10 @@ export default function StudentApplicationDetails() {
             </div>
             <button id ="logoutbutton"> Log Out</button>
         </header>
-        <div id='MainContainer'>
+        <div id='ApplicationMainContainer'>
             <div id="ApplicationDetails">
-                <form id="AppDetailsForm">
-                    <h2> Application Details </h2>
+                <form onSubmit={stopReloadSubmit} id="AppDetailsForm">
+                    <h1> Application Details </h1>
                     <p> Request for a clearance </p>
                     {cleared && <button> Print PDF </button>}
                     {/* <label for="acadAdviser"> Academic Adviser </label> */}
