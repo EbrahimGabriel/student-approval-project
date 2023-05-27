@@ -1,15 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Home as StudHome from './frontend/homepage';
-//import Root from './frontend/Root';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import SignIn from './general_pages/signin';
 import SignUp from './general_pages/signup';
 import Root from './general_pages/root';
 import Home from './general_pages/home';
 import AdminRoot from './admin_pages/admin_root';
-import Admin from './admin_pages/admin_home';
+import AdminHome from './admin_pages/admin_home';
 
 const router = createBrowserRouter([
   {path: "/", element: <SignIn />},
@@ -19,7 +17,7 @@ const router = createBrowserRouter([
     //add other pages here once its done
   ]},
   {path: "/admin", element: <AdminRoot />, children:[
-    {path: "/admin", element: <Admin />}
+    {path: "/admin", element: <AdminHome />}
   ]} //very secure!
 ])
 const root = ReactDOM.createRoot(document.getElementById('root'));
