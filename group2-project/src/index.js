@@ -9,6 +9,7 @@ import Home from './general_pages/home';
 import AdminRoot from './admin_pages/admin_root';
 import AdminHome from './admin_pages/admin_home';
 
+
 const router = createBrowserRouter([
   {path: "/", element: <SignIn />},
   {path: "/signup", element: <SignUp />},
