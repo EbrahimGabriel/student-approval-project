@@ -384,3 +384,40 @@ code {
 .linksignup:hover{
   color: #d946ef;
 }
+
+.inputs{
+  border-radius: 4px;
+  padding: 10px;
+  margin: 8px;
+  margin-left: 50px;
+  width: 320px;
+  border: none;
+  outline: double pink;
+}
+
+#sign-up{
+  margin-top: -20px;
+}
+
+#signupbtn{
+  margin-top: -20px;
+  margin-left: 79px;
+  height: 45px;
+}
+
+.suimgside{
+  display: flex;
+  flex-direction: row;
+  margin-top: -480px;
+  margin-right: -770px;
+  width: 370px;
+  height: 540px;
+  border-left: solid #d946ef 5px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.suimgside:hover{
+  filter:hue-rotate(-0.25turn);
+  transform: rotate(10deg);
+}
