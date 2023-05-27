@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import Home as StudHome from './frontend/homepage';
+//import Root from './frontend/Root';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import SignIn from './general_pages/signin';
 import SignUp from './general_pages/signup';
