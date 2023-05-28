@@ -65,7 +65,17 @@ export default function StudentApplicationDetails() {
                 <img src="https://static.cdnlogo.com/logos/m/39/minexcoin.svg" alt="logo"/>
                 <h1>Lorem Ipsum</h1>
             </div>
-            <button id ="logoutbutton"> Log Out</button>
+            <div id="headerbuttons">
+            <div id="notifbutton">
+                <button>
+                    <img src="https://flaticons.net/icon.php?slug_category=miscellaneous&slug_icon=bell" alt="logo"/>
+                </button>
+            </div>            
+                <button id ="logoutbutton"> Log Out</button>
+            <div id="extraspace">
+            </div>
+            </div>
+
         </header>
         <div id='ApplicationMainContainer'>
             <div id="ApplicationDetails">
