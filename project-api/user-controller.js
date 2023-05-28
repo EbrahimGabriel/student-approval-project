@@ -19,6 +19,11 @@ const getUsers = async (req, res) => {
 	res.send(users)
 }
 
+const getUserByEmailPassword = async (req, res) => {
+	const user = await User.findOne({ email: req.query.email, password: req.query.password })
+	res.send(subject)
+}
+
 const addUser = async (req, res) => {
 	const { fname, mname, lname, snumber, usertype, email, password } = req.body
 
@@ -50,4 +55,4 @@ const deleteUser = async (req, res) => {
 	}
 }
 
-export { getUsers, addUser, deleteUser };
+export { getUsers, addUser, deleteUser, getUserByEmailPassword };

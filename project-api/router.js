@@ -1,5 +1,5 @@
-import { getUsers, addUser, deleteUser } from './user-controller.js';
-import { getApplications, addApplication, deleteApplication } from './application-controller.js';
+import { getUsers, addUser, deleteUser, getUserByEmailPassword } from './user-controller.js';
+import { getApplications, addApplication, deleteApplication, getOpenApplication } from './application-controller.js';
 import { getUserRequests, addUserRequest, deleteUserRequest } from './user-controller.js';
 
 export default function router(app) {
@@ -16,9 +16,13 @@ export default function router(app) {
 	app.get("/get-users", getUsers);
   app.post("/add-user", addUser);
   app.post("/delete-user", deleteUser);
+  app.get("/login-user", getUserByEmailPassword);
+
   app.get("/get-applications", getApplications);
   app.post("/add-application", addApplication);
   app.post("/delete-application", deleteApplication);
+  app.get("/get-open-application", getOpenApplication);
+
   app.get("/get-requests", getUserRequests);
   app.post("/add-request", addUserRequest);
   app.post("/delete-request", deleteUserRequest);
