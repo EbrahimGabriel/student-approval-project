@@ -23,6 +23,11 @@ const getApplications = async (req, res) => {
 	res.send(applications)
 }
 
+const getOpenApplication = async (req, res) => {
+	const application = await Application.find({_id: req.query._id, status: "open"});
+	res.send(application)
+}
+
 const addApplication = async (req, res) => {
 	const { status, step, studentsubmission } = req.body
 
@@ -54,4 +59,4 @@ const deleteApplication = async (req, res) => {
 	}
 }
 
-export { getApplications, addApplication, deleteApplication };
+export { getApplications, addApplication, deleteApplication, getOpenApplication };

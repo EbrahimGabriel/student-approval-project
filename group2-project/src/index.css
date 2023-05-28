@@ -1,3 +1,4 @@
+/*CSS FOR STUDENT HOME*/
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -17,6 +18,7 @@ code {
 #MainContainer {
   display: flex;
   flex-direction: row;
+  align-items: flex-start;
 }
 
 #headerdiv{
@@ -62,7 +64,7 @@ code {
 #LeftSection{
   display: flex;
   flex-direction: column;
-  flex-grow: 0.6;
+  flex-grow: 2;
   justify-content: center;
   align-items: center;
 }
@@ -97,30 +99,6 @@ code {
   outline: auto;
 }
 
-#LeftSection button{
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  background-color: transparent;
-  color: #ce4df3;
-  width: 75%;
-  border: 0;
-  border-radius: 8px;
-  margin-top: 10px;
-}
-
-
-#LeftSection button:hover {
-  background-color: #334155;
-  box-shadow: 0 12px 24px 0 rgba(0,0,0,0.2);
-  color:#D9D9D9;
-  cursor: pointer;
-  -webkit-transition: background-color 2s ease-out;
-  -moz-transition: background-color 2s ease-out;
-  -o-transition: background-color 2s ease-out;
-  transition: background-color 2s ease-out;
-}
-
 
 #RightSection{
   display: flex;
@@ -130,7 +108,8 @@ code {
 
 #ClearanceHistoryDiv{
   color: #96a4b9;
-  margin-left: 30px;;
+  margin-left: 30px;
+  margin-bottom: 25px;
 }
 
 #ClearanceHistoryDiv h1{
@@ -147,7 +126,7 @@ code {
 }
 
 
-#HistoryContent button{
+#HistoryContent card{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -160,6 +139,11 @@ code {
   border:0;
   border-radius: 8px;
   color: #d5e7ff;
+}
+
+#HistoryContent card:hover{
+  box-shadow: 0 12px 24px 0 rgba(0,0,0,0.2);
+  transform: scale(1.05) perspective(1px);
 }
 
 
@@ -420,4 +404,105 @@ code {
 .suimgside:hover{
   filter:hue-rotate(-0.25turn);
   transform: rotate(10deg);
+}
+
+#ButtonSection{
+  display: flex;
+  flex-direction: row;
+}
+
+#ButtonSection button{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #f8e8ff;
+  color: #ce4df3;
+  width: 75%;
+  border: 0;
+  border-radius: 8px;
+  margin-top: 8px;
+  margin-left: 15px;
+}
+
+#ButtonSection button:hover {
+  background-color: #334155;
+  box-shadow: 0 12px 24px 0 rgba(0,0,0,0.2);
+  color:#D9D9D9;
+  cursor: pointer;
+  -webkit-transition: background-color 2s ease-out;
+  -moz-transition: background-color 2s ease-out;
+  -o-transition: background-color 2s ease-out;
+  transition: background-color 2s ease-out;
+}
+
+#UnderClearance{
+  display: flex;
+  flex-direction: row;
+  margin-left: 30px;
+}
+
+#UnderClearance button{
+  display: flex;
+  margin-left: 15px;
+  background-color: #2e69ef;
+  color:#ccd5e2;
+}
+
+/*------------------------------------------*/
+/*CSS PART FOR APPLICATION DETAILS */
+
+#ApplicationMainContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+#AppDetailsForm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  color:#96a4b9;
+}
+
+#AppDetailsForm h1{
+  color: #6091f6;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+#AppDetailsForm p{
+  color:#ce4df3;
+  font-size: x-large;
+  margin-top:1px;
+  margin-bottom: 0;
+}
+
+#AppDetailsForm label{
+  margin-bottom: 10px;
+  font-size: medium;
+}
+
+#AppDetailsForm input[type=text]{
+  border: none;
+  border-bottom: 2px solid #96a4b9;
+  background-color: transparent;
+  width: 100%;
+  color:#96a4b9;
+}
+
+
+#AppDetailsForm button{
+  display: flex;
+  padding: 12px 28px;
+  background-color: #2e69ef;
+  color:#ccd5e2;
+  font-size: 16px;
+  border-radius: 8px;
+}
+
+#AppDetailsForm button:hover{
+  background-color: transparent;
 }
