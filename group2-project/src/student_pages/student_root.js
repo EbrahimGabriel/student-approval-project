@@ -5,7 +5,8 @@ export default function StudentRoot() {
       <>
       <nav>
         <ul id="NavBarUL">
-            <li><Link to={"/home"}>Home</Link></li>
+            <li><Link to={"/student"}>Home</Link></li>
+            <li><Link to={"/student/application-details"}>Create Application</Link></li>
         </ul>
       </nav>
       <Outlet />
