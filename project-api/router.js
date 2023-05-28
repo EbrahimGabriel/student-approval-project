@@ -1,10 +1,10 @@
 import { getUsers, addUser, deleteUser, getUserByEmailPassword } from './user-controller.js';
 import { getApplications, addApplication, deleteApplication, getOpenApplication } from './application-controller.js';
-import { getUserRequests, addUserRequest, deleteUserRequest } from './user-controller.js';
+import { getUserRequests, addUserRequest, deleteUserRequest } from './account-controller.js';
 
 export default function router(app) {
 
-	// Allow Cross Origin Resource Sharing
+  // Allow Cross Origin Resource Sharing
   app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Credentials', 'true');
@@ -12,8 +12,8 @@ export default function router(app) {
     res.setHeader('Access-Control-Allow-Headers', 'Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers');
     next();
   })
-  
-	app.get("/get-users", getUsers);
+
+  app.get("/get-users", getUsers);
   app.post("/add-user", addUser);
   app.post("/delete-user", deleteUser);
   app.get("/login-user", getUserByEmailPassword);
