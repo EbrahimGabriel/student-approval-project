@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 await mongoose.connect('mongodb://127.0.0.1:27017/project')
 
-const User = mongoose.model('User', {
+const UserRequest = mongoose.model('UserRequest', {
 	fname: String,
 	mname: String,
 	lname: String,
@@ -11,25 +11,21 @@ const User = mongoose.model('User', {
 	email: String,
 	password: String, //very secure!
 	applications: [{type: mongoose.Schema.Types.ObjectId, ref: 'Application'}], //idk lol
-	adviser: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
+	adviser: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
+    approved: Boolean
 });
 
-const getUsers = async (req, res) => {
-	const users = await User.find({});
-	res.send(users)
+const getUserRequests = async (req, res) => {
+	const userRequests = await UserRequest.find({});
+	res.send(userRequests)
 }
 
-const getUserByEmailPassword = async (req, res) => {
-	const user = await User.findOne({ email: req.query.email, password: req.query.password })
-	res.send(subject)
-}
-
-const addUser = async (req, res) => {
+const addUserRequest = async (req, res) => {
 	const { fname, mname, lname, snumber, usertype, email, password } = req.body
 
-	const newUser = new User({ fname, mname, lname, snumber, usertype, email, password, applications:[], adviser:null })
+	const newUserRequest = new UserRequest({ fname, mname, lname, snumber, usertype, email, password, applications:[], adviser:null, approved:null })
 
-	const result = await newUser.save()
+	const result = await newUserRequest.save()
 
 	if (result._id) {
 		res.send({ success: true })
@@ -43,10 +39,10 @@ const addUser = async (req, res) => {
 //-------------------------------
 
 //deletes using user id
-const deleteUser = async (req, res) => {
+const deleteUserRequest = async (req, res) => {
 	const { _id } = req.body
 
-	const result = await User.deleteOne({ _id })
+	const result = await UserRequest.deleteOne({ _id })
 
 	if (result.deletedCount == 1) {
 		res.send({ success: true })
@@ -55,4 +51,4 @@ const deleteUser = async (req, res) => {
 	}
 }
 
-export { getUsers, addUser, deleteUser, getUserByEmailPassword };
+export { getUserRequests, addUserRequest, deleteUserRequest };
