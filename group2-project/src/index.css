@@ -46,10 +46,68 @@ code {
   width: 50px;
 }
 
+#headerbuttons{
+  display: flex;
+  flex-direction: row;
+}
+
+#extraspace{
+  margin-right: 35px;
+}
+/*THIS ONE IS FOR THE NOTIFICATION!!*/
+#notifbutton{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0;
+  margin-left: 25px;
+}
+
+#notifbutton button{
+  position:relative;
+  margin-left: 30px;
+  margin-right: 10px;
+}
+
+#notifbutton img{
+  width: 20px;
+  height: 20px;
+}
+
+#notifnum{  
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: -10px;
+  right: -4px;
+  width: 15px;
+  height: 15px;
+  background: red;
+  color: #ffffff;
+  border-radius: 75%;
+}
+
+#notifscontainer{
+  width:300px;
+  background-color: #ffffff;
+  border-radius: 6px;
+  position:absolute;
+  top:37%;
+  left:77%;
+  transform: translate(-50%,-50%);;
+  text-align: center;
+  padding: 0 30px 30px;
+  color: #333;
+}
+
+.close-notifs {
+  visibility: hidden;
+}
+
+
 #headerdiv button{
-  margin-right: 20px;
+  
   font-size: 20;
-  padding: 6px 24px;
   border-radius: 8px;
   color: #ccd5e2;
   background-color: transparent;
@@ -446,6 +504,11 @@ code {
   margin-left: 15px;
   background-color: #2e69ef;
   color:#ccd5e2;
+}
+
+#UnderClearance img{
+  height: 30px;
+  width: 30px;
 }
 
 /*------------------------------------------*/

@@ -1,6 +1,12 @@
+/*
+REFERENCES:
+Notification: https://codepen.io/dcode-software/pen/KKgpKog
+Creating Pop up:https://www.youtube.com/watch?v=AF6vGYIyV8M
+*/
+
 import { useNavigate} from "react-router-dom";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState} from "react";
 
 export default function StudentHome() {
 
@@ -26,6 +32,20 @@ export default function StudentHome() {
         })
     }
 
+    //This is for popup
+    //using usestate so it will automatically update when changed!
+    const [notifOpen, setNotifOpen] = useState(false);
+    
+    //this one will make the notifscontainer visible
+    function openNotif(){
+        setNotifOpen(true);
+    }
+
+    //making the notifscontainer invisible/hidden again
+    function closeNotif(){
+        setNotifOpen(false);
+    }
+
     return (
       <>
       <header id ="headerdiv">
@@ -33,8 +53,29 @@ export default function StudentHome() {
               <img src="https://static.cdnlogo.com/logos/m/39/minexcoin.svg" alt="logo"/>
               <h1>Lorem Ipsum</h1>
           </div>
-          <button id ="logoutbutton"> Log Out</button>
+          <div id="headerbuttons">
+            <div id="notifbutton">
+                <button type="button" onClick={openNotif}>
+                    <img src="https://flaticons.net/icon.php?slug_category=miscellaneous&slug_icon=bell" alt="logo"/>
+                    <span id="notifnum">3</span>
+                </button>
+            </div>            
+                <button id ="logoutbutton"> Log Out</button>
+            <div id="extraspace">
+            </div>
+          </div>
+
+          
       </header>
+        
+        <div class={`${!notifOpen ? 'close-notifs' : ''}`} id="notifscontainer">
+            <h3>NOTIFICATION</h3>
+            <h4>Step Given:___</h4>
+            <p>Remark Messages</p>
+            <p>3 hours ago</p>
+            <button onClick={closeNotif}>OK</button>
+        </div>
+
       <div id= "MainContainer"> 
       <div id ="LeftSection">
           <card id ="ProfileCard">
@@ -81,8 +122,9 @@ export default function StudentHome() {
               </div>
           </div>
           <div id ="UnderClearance">
-            <button>View</button>
-            <button>Download</button>
+            <button id="DownloadButton">
+                <img src="https://www.freeiconspng.com/uploads/download-icon-down-arrow-23.png" alt="Download"/>
+            </button>
           </div>
 
           <div id ="ClearanceHistoryDiv">           
